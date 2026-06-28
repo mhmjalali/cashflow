@@ -82,7 +82,9 @@ export default function RootLayout({
           showSpinner={false}
           shadow={false}
         />
-        {children}
+        <div className="flex flex-col min-h-screen py-2 px-4 bg-background">
+          {children}
+        </div>
       </body>
     </html>
   );
