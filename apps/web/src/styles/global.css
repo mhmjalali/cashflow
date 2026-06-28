@@ -30,9 +30,6 @@ body {
   --color-primary: #7a8b5a;
   --color-primary-dark: #535e40;
 
-  --color-saved-box: #e7e5a5b1;
-  --color-wallet-box: #d4eca7c4;
-
   --color-secondary: #e2b45f;
   --color-secondary-dark: #967029;
 
@@ -42,8 +39,8 @@ body {
   --color-received: #059669;
   --color-paid: #dc2626;
 
-  --color-background: #f2e8d5;
-  --color-border: #e2e8f0;
+  --color-background: #ebf3ec;
+  --color-border: #a5ada6;
 
   --color-text: #2f3624;
   --color-text-muted: #64748b;
