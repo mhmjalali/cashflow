@@ -1,6 +1,6 @@
 "use client";
 
-import { TrendingDown, TrendingUp, Wallet } from "lucide-react";
+import { ArrowLeftRight, TrendingDown, TrendingUp, Wallet } from "lucide-react";
 import CountUp from "react-countup";
 import { motion } from "motion/react";
 
@@ -26,7 +26,7 @@ const WalletBalance = () => {
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, ease }}
-      className="relative overflow-hidden flex-1 rounded-3xl bg-white p-4 shadow-sm"
+      className="relative overflow-hidden flex-1 rounded-3xl bg-white p-4 shadow-xs m-0.5"
     >
       <motion.div
         className="pointer-events-none absolute left-[50%] top-[30%] h-25 w-25 rounded-full bg-primary/40 blur-2xl"
@@ -44,13 +44,13 @@ const WalletBalance = () => {
             <Wallet className="size-5 text-text" />
           </div>
           <div>
-            <p className="font-medium text-text">موجودی کیف پول</p>
-            <p className="text-sm text-text-muted">14:15</p>
+            <p className="font-medium text-text text-xs">موجودی کیف پول</p>
+            <p className="text-[10px] text-text-muted">14:15</p>
           </div>
         </div>
         <div className="flex items-center gap-1 rounded-full bg-error/20 px-2.5 py-1">
           <TrendingDown className="size-3 text-error" />
-          <span className="text-xs font-medium text-error">12%</span>
+          <span className="text-[10px] font-medium text-error">12%</span>
         </div>
       </motion.div>
 
@@ -58,20 +58,19 @@ const WalletBalance = () => {
         initial={{ opacity: 0, scale: 0.92 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.2, duration: 0.5, ease }}
-        className="mt-4 text-center"
+        className="mt-2 text-center"
       >
         <CountUp
-          className="text-3xl font-bold text-text tracking-tight [font-variant-numeric:tabular-nums]"
+          className="text-xl font-bold text-text tracking-tight [font-variant-numeric:tabular-nums]"
           end={fakeData.total_balance}
           separator=","
           duration={1.4}
           delay={0.25}
         />
-        <p className="mt-1 text-xs text-text-muted">تومان</p>
+        <p className="mt-0.5 text-[10px] text-text-muted">تومان</p>
       </motion.div>
 
-      {/* budget usage */}
-      <div className="mt-3">
+      {/* <div className="mt-2">
         <div className="h-1.5 w-full overflow-hidden rounded-full bg-primary/15">
           <motion.div
             className="h-full rounded-full bg-primary"
@@ -81,8 +80,8 @@ const WalletBalance = () => {
             style={{ transformOrigin: "right" }}
           />
         </div>
-        <div className="mt-1.5 flex items-center justify-between">
-          <span className="text-[11px] text-text-muted">
+        <div className="mt-1 flex items-center justify-between">
+          <span className="text-[10px] text-text-muted">
             <CountUp
               end={usedPercent}
               duration={1.2}
@@ -91,7 +90,7 @@ const WalletBalance = () => {
             />
             ٪ از بودجه
           </span>
-          <span className="text-[11px] text-text-muted">
+          <span className="text-[10px] text-text-muted">
             <CountUp
               end={remainingBudget}
               separator=","
@@ -101,46 +100,49 @@ const WalletBalance = () => {
             تومان باقی‌مانده
           </span>
         </div>
-      </div>
+      </div> */}
 
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.35 }}
-        className="my-3 h-px bg-text/20"
+        className="my-2 h-px bg-text/20"
       />
       <div>
-        <p className="text-text font-bold mb-2">آمار روزانه</p>
+        <div className="flex items-center gap-2 mb-2">
+          <ArrowLeftRight className="size-3 text-text" />
+          <p className="text-text font-bold text-xs">آخرین تراکنش</p>
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.38, duration: 0.4, ease }}
           className="grid grid-cols-2 gap-2.5"
         >
-          <div className="rounded-xl border border-success/20 bg-success/10 flex items-center flex-col justify-center">
-            <div className="mb-1.5 flex items-center gap-1 flex-row-reverse justify-end">
-              <TrendingUp className="size-4 text-received" />
-              <span className="text-sm text-received">دریافتی</span>
-            </div>
-            <CountUp
-              className="font-semibold text-received [font-variant-numeric:tabular-nums]"
-              end={fakeData.received}
-              separator=","
-              duration={1.1}
-              delay={0.42}
-            />
-          </div>
           <div className="rounded-xl border border-error/15 bg-error/8  flex items-center flex-col justify-center">
-            <div className="mb-1.5 flex items-center gap-1 flex-row-reverse justify-end">
-              <TrendingDown className="size-4 text-paid" />
-              <span className="text-sm text-paid">پرداختی</span>
+            <div className="mb-0.5 flex items-center gap-1 flex-row-reverse justify-end">
+              <TrendingDown className="size-3.5 text-paid" />
+              <span className="text-xs text-paid">پرداختی</span>
             </div>
             <CountUp
-              className="font-semibold text-paid [font-variant-numeric:tabular-nums]"
+              className="font-semibold text-paid text-sm [font-variant-numeric:tabular-nums]"
               end={fakeData.paid}
               separator=","
               duration={0.9}
               delay={0.48}
+            />
+          </div>
+          <div className="rounded-xl border border-success/20 bg-success/10 flex items-center flex-col justify-center">
+            <div className="mb-0.5 flex items-center gap-1 flex-row-reverse justify-end">
+              <TrendingUp className="size-3.5 text-received" />
+              <span className="text-xs text-received">دریافتی</span>
+            </div>
+            <CountUp
+              className="font-semibold text-received text-sm [font-variant-numeric:tabular-nums]"
+              end={fakeData.received}
+              separator=","
+              duration={1.1}
+              delay={0.42}
             />
           </div>
         </motion.div>

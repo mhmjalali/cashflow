@@ -1,12 +1,12 @@
 import Budget from "./budget/budget";
+import FinanceActions from "./finance-actions";
 import FinantialSnapShot from "./finantial-snap-shot";
-import QuickActions from "./quick-actions";
 
 const Home = () => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-3">
       <FinantialSnapShot />
-      <QuickActions />
+      <FinanceActions />
       <Budget />
     </div>
   );
