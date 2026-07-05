@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 import { useId } from "react";
 
 const tabsVariants = cva(
-  "relative flex items-center rounded-xl bg-muted/50 p-1 border border-border/60 backdrop-blur-sm",
+  "relative flex items-center rounded-xl bg-muted/50 p-0.5 border border-border/60 backdrop-blur-sm",
   {
     variants: {
       size: {

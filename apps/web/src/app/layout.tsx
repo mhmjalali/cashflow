@@ -77,12 +77,12 @@ export default function RootLayout({
     <html lang="fa" dir="rtl">
       <body className={`${morabba.variable} font-(family-name:--font-morabba)`}>
         <NextTopLoader
-          color="#1D9E75"
+          color="#166534"
           height={3}
           showSpinner={false}
           shadow={false}
         />
-        <div className="flex flex-col min-h-screen py-2 px-4 bg-background">
+        <div className="flex flex-col min-h-screen py-2 px-2 bg-background">
           {children}
         </div>
       </body>

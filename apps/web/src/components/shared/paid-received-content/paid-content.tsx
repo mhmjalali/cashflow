@@ -83,6 +83,7 @@ const PaidContent = () => {
       <Button
         type="submit"
         color="error"
+        variant="outlined"
         loading={isSubmitting}
         loadingText="درحال ثبت..."
         className="mt-2 w-full"

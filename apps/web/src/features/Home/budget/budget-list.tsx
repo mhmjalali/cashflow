@@ -26,7 +26,7 @@ const BudgetCard = ({ catKey }: { catKey: BudgetCategoryKey }) => {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease }}
-      className="flex items-center gap-3 rounded-2xl bg-white p-3 shadow-sm"
+      className="flex items-center gap-3 rounded-2xl bg-white p-2 shadow-sm"
     >
       <div className="relative shrink-0 h-14 w-14">
         <svg className="h-14 w-14 -rotate-90" viewBox="0 0 56 56">

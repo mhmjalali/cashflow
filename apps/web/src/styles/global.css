@@ -27,11 +27,11 @@ body {
 }
 
 @theme {
-  --color-primary: #7a8b5a;
-  --color-primary-dark: #535e40;
+  --color-primary: #166534;
+  --color-primary-dark: #14532d;
 
-  --color-secondary: #e2b45f;
-  --color-secondary-dark: #967029;
+  --color-secondary: #f59e0b;
+  --color-secondary-dark: #d97706;
 
   --color-success: #059669;
   --color-error: #dc2626;
@@ -39,7 +39,7 @@ body {
   --color-received: #059669;
   --color-paid: #dc2626;
 
-  --color-background: #ebf3ec;
+  --color-background: #ebece9;
   --color-border: #a5ada6;
 
   --color-text: #2f3624;

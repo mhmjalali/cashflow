@@ -1,6 +1,6 @@
 "use client";
 
-import DepOppModal from "@/components/shared/dep-opp-modal";
+import PaidReceivedContent from "@/components/shared/paid-received-content";
 import { BanknoteArrowUp } from "lucide-react";
 import { useState } from "react";
 
@@ -18,7 +18,7 @@ const Paid = () => {
           <BanknoteArrowUp className="w-5 h-5" />
         </div>
       </button>
-      <DepOppModal open={modalOpen} setOpen={setModalOpen} />
+      <PaidReceivedContent open={modalOpen} setOpen={setModalOpen} />
     </>
   );
 };
