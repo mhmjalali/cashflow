@@ -12,11 +12,11 @@ const fakeData = {
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const SaveBox = () => {
-  const progress = Math.min(
-    (fakeData.total_balance / fakeData.target) * 100,
-    100,
-  );
-  const remaining = fakeData.target - fakeData.total_balance;
+  // const progress = Math.min(
+  //   (fakeData.total_balance / fakeData.target) * 100,
+  //   100,
+  // );
+  // const remaining = fakeData.target - fakeData.total_balance;
 
   return (
     <motion.div

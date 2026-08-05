@@ -15,11 +15,11 @@ const fakeData = {
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const WalletBalance = () => {
-  const usedPercent = Math.min(
-    (fakeData.used_budget / fakeData.total_budget) * 100,
-    100,
-  );
-  const remainingBudget = fakeData.total_budget - fakeData.used_budget;
+  // const usedPercent = Math.min(
+  //   (fakeData.used_budget / fakeData.total_budget) * 100,
+  //   100,
+  // );
+  // const remainingBudget = fakeData.total_budget - fakeData.used_budget;
 
   return (
     <motion.div

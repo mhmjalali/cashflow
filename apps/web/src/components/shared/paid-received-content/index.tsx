@@ -1,10 +1,9 @@
-import Modal from "@/components/ui/Modal";
+import Drawer from "@/components/ui/Deawer";
 import Tabs from "@/components/ui/TabPanel";
-import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { useState } from "react";
 import PaidContent from "./paid-content";
 import ReceivedContent from "./received-content";
-import Drawer from "@/components/ui/Deawer";
 
 type PaidReceivedContentProps = {
   open: boolean;
