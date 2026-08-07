@@ -27,13 +27,15 @@ body {
 }
 
 @theme {
-  --color-primary: #16a34a;
-  --color-secondary: #2563eb;
-  --color-text: #111827;
-  --color-text-muted: #6b7280;
-  --color-background: #f9fafb;
-  --color-success: #22c55e;
-  --color-warning: #f59e0b;
-  --color-error: #ef4444;
-  --color-border: #e5e7eb;
+  --color-primary: #2563EB;
+  --color-secondary: #0D9488;
+  --color-accent: #7C3AED;
+  --color-background: #F5F6F8;
+  --color-foreground: #FFFFFF;  
+  --color-text: #1E293B;
+  --color-text-muted: #64748B;
+  --color-error: #DC2626;
+  --color-success: #16A34A;
+  --color-warning: #D97706;
+  --color-border: #E2E8F0;
 }
