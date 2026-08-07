@@ -15,24 +15,13 @@ const fakeData = {
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const WalletBalance = () => {
-  // const usedPercent = Math.min(
-  //   (fakeData.used_budget / fakeData.total_budget) * 100,
-  //   100,
-  // );
-  // const remainingBudget = fakeData.total_budget - fakeData.used_budget;
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, ease }}
-      className="relative overflow-hidden flex-1 rounded-3xl bg-white p-4 shadow-xs m-0.5"
+      className="relative overflow-hidden flex-1 rounded-3xl bg-foreground p-4 shadow-xs m-0.5"
     >
-      <motion.div
-        className="pointer-events-none absolute left-[50%] top-[30%] h-25 w-25 rounded-full bg-primary/40 blur-2xl"
-        animate={{ x: [0, 20, -10, 0], y: [0, -15, 10, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -40,8 +29,8 @@ const WalletBalance = () => {
         className="flex items-start justify-between"
       >
         <div className="flex items-center gap-2.5">
-          <div className="rounded-xl bg-primary/50 p-2">
-            <Wallet className="size-5 text-text" />
+          <div className="rounded-xl bg-primary/20 p-2">
+            <Wallet className="size-5 text-primary" />
           </div>
           <div>
             <p className="font-medium text-text text-xs">موجودی کیف پول</p>
@@ -69,39 +58,6 @@ const WalletBalance = () => {
         />
         <p className="mt-0.5 text-[10px] text-text-muted">تومان</p>
       </motion.div>
-
-      {/* <div className="mt-2">
-        <div className="h-1.5 w-full overflow-hidden rounded-full bg-primary/15">
-          <motion.div
-            className="h-full rounded-full bg-primary"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: usedPercent / 100 }}
-            transition={{ delay: 0.5, duration: 0.8, ease }}
-            style={{ transformOrigin: "right" }}
-          />
-        </div>
-        <div className="mt-1 flex items-center justify-between">
-          <span className="text-[10px] text-text-muted">
-            <CountUp
-              end={usedPercent}
-              duration={1.2}
-              delay={0.5}
-              decimals={0}
-            />
-            ٪ از بودجه
-          </span>
-          <span className="text-[10px] text-text-muted">
-            <CountUp
-              end={remainingBudget}
-              separator=","
-              duration={1.2}
-              delay={0.5}
-            />{" "}
-            تومان باقی‌مانده
-          </span>
-        </div>
-      </div> */}
-
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

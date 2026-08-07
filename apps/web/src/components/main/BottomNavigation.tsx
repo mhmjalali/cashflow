@@ -39,7 +39,7 @@ function NavLink({ item, isActive }: { item: NavItem; isActive: boolean }) {
       {isActive && (
         <motion.span
           layoutId="nav-active-pill"
-          className="absolute inset-x-2 top-0.5 h-[90%] rounded-2xl bg-primary/10"
+          className="absolute inset-x-2 top-0.5 h-[90%] rounded-2xl bg-secondary/10"
           transition={{ type: "spring", stiffness: 380, damping: 30 }}
         />
       )}
@@ -50,14 +50,14 @@ function NavLink({ item, isActive }: { item: NavItem; isActive: boolean }) {
       >
         <Icon
           className={`h-5.5 w-5.5 transition-colors duration-200 ${
-            isActive ? "text-primary" : "text-text-muted"
+            isActive ? "text-secondary" : "text-text-muted"
           }`}
           strokeWidth={isActive ? 2.4 : 2}
         />
       </motion.span>
       <span
         className={`relative z-10 text-[11px] transition-colors duration-200 ${
-          isActive ? "font-medium text-primary" : "text-text-muted"
+          isActive ? "font-medium text-secondary" : "text-text-muted"
         }`}
       >
         {item.label}
