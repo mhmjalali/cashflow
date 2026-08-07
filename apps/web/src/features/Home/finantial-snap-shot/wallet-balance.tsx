@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { ArrowLeftRight, TrendingDown, TrendingUp, Wallet } from "lucide-react";
-import CountUp from "react-countup";
-import { motion } from "motion/react";
+import { ArrowLeftRight, TrendingDown, TrendingUp, Wallet } from 'lucide-react';
+import CountUp from 'react-countup';
+import { motion } from 'motion/react';
 
 const fakeData = {
   total_balance: 210000000,

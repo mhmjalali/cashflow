@@ -1,44 +1,44 @@
-"use client";
+'use client';
 
-import { cva, type VariantProps } from "class-variance-authority";
-import { AlertCircle, CheckCircle2, AlertTriangle } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { forwardRef, useId } from "react";
+import { cva, type VariantProps } from 'class-variance-authority';
+import { AlertCircle, CheckCircle2, AlertTriangle } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { forwardRef, useId } from 'react';
 
 const fieldVariants = cva(
   [
-    "flex w-full items-center gap-2 rounded-lg border bg-white transition-colors",
-    "focus-within:outline-none focus-within:ring-4",
-    "has-disabled:cursor-not-allowed has-disabled:bg-background has-disabled:opacity-60",
+    'flex w-full items-center gap-2 rounded-lg border bg-white transition-colors',
+    'focus-within:outline-none focus-within:ring-4',
+    'has-disabled:cursor-not-allowed has-disabled:bg-background has-disabled:opacity-60',
   ],
   {
     variants: {
       state: {
         default:
-          "border-border focus-within:border-primary focus-within:ring-primary/15",
+          'border-border focus-within:border-primary focus-within:ring-primary/15',
         success:
-          "border-success focus-within:border-success focus-within:ring-success/15",
+          'border-success focus-within:border-success focus-within:ring-success/15',
         error:
-          "border-error focus-within:border-error focus-within:ring-error/15",
+          'border-error focus-within:border-error focus-within:ring-error/15',
         warning:
-          "border-warning focus-within:border-warning focus-within:ring-warning/15",
+          'border-warning focus-within:border-warning focus-within:ring-warning/15',
       },
       fieldSize: {
-        sm: "h-9 px-2.5 text-sm",
-        md: "h-10 px-3 text-sm",
-        lg: "h-11 px-3.5 text-base",
+        sm: 'h-9 px-2.5 text-sm',
+        md: 'h-10 px-3 text-sm',
+        lg: 'h-11 px-3.5 text-base',
       },
     },
     defaultVariants: {
-      state: "default",
-      fieldSize: "md",
+      state: 'default',
+      fieldSize: 'md',
     },
   },
 );
 
 export interface TextFieldProps
   extends
-    Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">,
+    Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'>,
     VariantProps<typeof fieldVariants> {
   label?: string;
   helperText?: string;
@@ -80,34 +80,34 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
     const resolvedState =
       state ??
       (errorText
-        ? "error"
+        ? 'error'
         : warningText
-          ? "warning"
+          ? 'warning'
           : successText
-            ? "success"
-            : "default");
+            ? 'success'
+            : 'default');
 
     const message = errorText ?? warningText ?? successText ?? helperText;
     const messageColor =
-      resolvedState === "error"
-        ? "text-error"
-        : resolvedState === "warning"
-          ? "text-warning"
-          : resolvedState === "success"
-            ? "text-success"
-            : "text-text-muted";
+      resolvedState === 'error'
+        ? 'text-error'
+        : resolvedState === 'warning'
+          ? 'text-warning'
+          : resolvedState === 'success'
+            ? 'text-success'
+            : 'text-text-muted';
 
     const MessageIcon =
-      resolvedState === "error"
+      resolvedState === 'error'
         ? AlertCircle
-        : resolvedState === "warning"
+        : resolvedState === 'warning'
           ? AlertTriangle
-          : resolvedState === "success"
+          : resolvedState === 'success'
             ? CheckCircle2
             : null;
 
     return (
-      <div className={cn("flex flex-col gap-1.5", containerClassName)}>
+      <div className={cn('flex flex-col gap-1.5', containerClassName)}>
         {label && (
           <label htmlFor={inputId} className="text-sm font-medium text-text">
             {label}
@@ -127,12 +127,12 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
             ref={ref}
             disabled={disabled}
             required={required}
-            aria-invalid={resolvedState === "error"}
+            aria-invalid={resolvedState === 'error'}
             aria-describedby={message ? helperId : undefined}
             className={cn(
-              "w-full min-w-0 bg-transparent text-text placeholder:text-text-muted",
-              "focus:outline-none disabled:cursor-not-allowed",
-              numeric && "tabular-nums",
+              'w-full min-w-0 bg-transparent text-text placeholder:text-text-muted',
+              'focus:outline-none disabled:cursor-not-allowed',
+              numeric && 'tabular-nums',
               className,
             )}
             {...props}
@@ -148,7 +148,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
         {message && (
           <p
             id={helperId}
-            className={cn("flex items-center gap-1 text-xs", messageColor)}
+            className={cn('flex items-center gap-1 text-xs', messageColor)}
           >
             {MessageIcon && <MessageIcon className="h-3.5 w-3.5 shrink-0" />}
             {message}
@@ -159,4 +159,4 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
   },
 );
 
-TextField.displayName = "TextField";
+TextField.displayName = 'TextField';

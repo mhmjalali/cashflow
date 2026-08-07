@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { motion } from "motion/react";
-import CountUp from "react-countup";
+import { motion } from 'motion/react';
+import CountUp from 'react-countup';
 import {
   budgetCategories,
   fakeBudgetData,
   type BudgetCategoryKey,
-} from "./budget-config";
+} from './budget-config';
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -65,9 +65,9 @@ const BudgetCard = ({ catKey }: { catKey: BudgetCategoryKey }) => {
         </div>
         <div className="mt-1 flex items-center justify-between text-[11px] text-text-muted">
           <span>
-            {used.toLocaleString("en-US")} از {total.toLocaleString("en-US")}
+            {used.toLocaleString('en-US')} از {total.toLocaleString('en-US')}
           </span>
-          <span>{remaining.toLocaleString("en-US")} باقی‌مانده</span>
+          <span>{remaining.toLocaleString('en-US')} باقی‌مانده</span>
         </div>
       </div>
     </motion.div>

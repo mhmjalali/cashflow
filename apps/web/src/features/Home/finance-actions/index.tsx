@@ -1,6 +1,6 @@
-import Paid from "./paid";
-import Received from "./received";
-import Saving from "./saving";
+import Paid from './paid';
+import Received from './received';
+import Saving from './saving';
 
 const FinanceActions = () => {
   return (

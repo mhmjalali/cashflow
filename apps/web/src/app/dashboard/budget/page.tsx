@@ -1,4 +1,4 @@
-import Budget from "@/features/budget";
+import Budget from '@/features/budget';
 
 const BudgetPage = () => {
   return <Budget />;

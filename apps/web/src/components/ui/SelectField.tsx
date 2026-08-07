@@ -1,27 +1,27 @@
-"use client";
+'use client';
 
-import { cn } from "@/lib/utils";
-import { cva, type VariantProps } from "class-variance-authority";
-import { ChevronDown } from "lucide-react";
-import { forwardRef } from "react";
+import { cn } from '@/lib/utils';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { ChevronDown } from 'lucide-react';
+import { forwardRef } from 'react';
 
 const selectVariants = cva(
-  "w-full rounded-md border bg-white text-text outline-none transition-colors appearance-none cursor-pointer disabled:pointer-events-none disabled:opacity-40",
+  'w-full rounded-md border bg-white text-text outline-none transition-colors appearance-none cursor-pointer disabled:pointer-events-none disabled:opacity-40',
   {
     variants: {
       size: {
-        sm: "text-xs px-3 py-1.5 h-8",
-        md: "text-sm px-3.5 py-2 h-10",
-        lg: "text-base px-4 py-2.5 h-12",
+        sm: 'text-xs px-3 py-1.5 h-8',
+        md: 'text-sm px-3.5 py-2 h-10',
+        lg: 'text-base px-4 py-2.5 h-12',
       },
       state: {
-        default: "border-border focus:border-primary",
-        error: "border-error focus:border-error",
+        default: 'border-border focus:border-primary',
+        error: 'border-error focus:border-error',
       },
     },
     defaultVariants: {
-      size: "md",
-      state: "default",
+      size: 'md',
+      state: 'default',
     },
   },
 );
@@ -33,7 +33,7 @@ interface SelectOption {
 
 interface SelectFieldProps
   extends
-    Omit<React.SelectHTMLAttributes<HTMLSelectElement>, "size">,
+    Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'size'>,
     VariantProps<typeof selectVariants> {
   label?: string;
   error?: string;
@@ -69,14 +69,14 @@ const SelectField = forwardRef<HTMLSelectElement, SelectFieldProps>(
             ref={ref}
             id={selectId}
             className={cn(
-              selectVariants({ size, state: error ? "error" : state }),
+              selectVariants({ size, state: error ? 'error' : state }),
               className,
             )}
             defaultValue=""
             {...props}
           >
             <option value="" disabled>
-              {placeholder ?? "انتخاب کنید"}
+              {placeholder ?? 'انتخاب کنید'}
             </option>
             {options.map((opt) => (
               <option key={opt.value} value={opt.value}>
@@ -92,6 +92,6 @@ const SelectField = forwardRef<HTMLSelectElement, SelectFieldProps>(
   },
 );
 
-SelectField.displayName = "SelectField";
+SelectField.displayName = 'SelectField';
 
 export default SelectField;

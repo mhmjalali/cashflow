@@ -1,33 +1,33 @@
-"use client";
+'use client';
 
-import { cn } from "@/lib/utils";
-import { cva, type VariantProps } from "class-variance-authority";
-import { forwardRef } from "react";
+import { cn } from '@/lib/utils';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { forwardRef } from 'react';
 
 const inputVariants = cva(
-  "w-full rounded-md border bg-white text-text outline-none transition-colors placeholder:text-text-muted disabled:pointer-events-none disabled:opacity-40 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none",
+  'w-full rounded-md border bg-white text-text outline-none transition-colors placeholder:text-text-muted disabled:pointer-events-none disabled:opacity-40 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none',
   {
     variants: {
       size: {
-        sm: "text-xs px-3 py-1.5 h-8",
-        md: "text-sm px-3.5 py-2 h-10",
-        lg: "text-base px-4 py-2.5 h-12",
+        sm: 'text-xs px-3 py-1.5 h-8',
+        md: 'text-sm px-3.5 py-2 h-10',
+        lg: 'text-base px-4 py-2.5 h-12',
       },
       state: {
-        default: "border-border focus:border-primary",
-        error: "border-error focus:border-error",
+        default: 'border-border focus:border-primary',
+        error: 'border-error focus:border-error',
       },
     },
     defaultVariants: {
-      size: "md",
-      state: "default",
+      size: 'md',
+      state: 'default',
     },
   },
 );
 
 interface InputFieldProps
   extends
-    Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">,
+    Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'>,
     VariantProps<typeof inputVariants> {
   label?: string;
   error?: string;
@@ -47,7 +47,7 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
           ref={ref}
           id={inputId}
           className={cn(
-            inputVariants({ size, state: error ? "error" : state }),
+            inputVariants({ size, state: error ? 'error' : state }),
             className,
           )}
           {...props}
@@ -58,6 +58,6 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
   },
 );
 
-InputField.displayName = "InputField";
+InputField.displayName = 'InputField';
 
 export default InputField;

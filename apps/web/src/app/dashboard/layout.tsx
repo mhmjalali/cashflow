@@ -1,4 +1,4 @@
-import BottomNavigation from "@/components/main/BottomNavigation";
+import BottomNavigation from '@/components/main/BottomNavigation';
 
 export default function DashboardLayout({
   children,

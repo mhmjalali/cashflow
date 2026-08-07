@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import useEmblaCarousel from "embla-carousel-react";
-import SaveBox from "./save-box";
-import WalletBalance from "./wallet-balance";
-import { useEffect, useState } from "react";
+import useEmblaCarousel from 'embla-carousel-react';
+import SaveBox from './save-box';
+import WalletBalance from './wallet-balance';
+import { useEffect, useState } from 'react';
 
 const FinantialSnapShot = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
-    align: "start",
+    align: 'start',
     dragFree: false,
-    direction: "rtl",
+    direction: 'rtl',
   });
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -18,9 +18,9 @@ const FinantialSnapShot = () => {
   useEffect(() => {
     if (!emblaApi) return;
     const onSelect = () => setActiveIndex(emblaApi.selectedScrollSnap());
-    emblaApi.on("select", onSelect);
+    emblaApi.on('select', onSelect);
     return () => {
-      emblaApi.off("select", onSelect);
+      emblaApi.off('select', onSelect);
     };
   }, [emblaApi]);
 

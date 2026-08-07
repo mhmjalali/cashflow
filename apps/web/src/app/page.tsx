@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation';
 
 export default function IntroPage() {
   const router = useRouter();
@@ -8,7 +8,7 @@ export default function IntroPage() {
     <>
       <h1>this is just an intro</h1>
       <button
-        onClick={() => router.push("/dashboard")}
+        onClick={() => router.push('/dashboard')}
         className="p-2 bg-primary rounded-2xl text-white my-2"
       >
         go to dashboard

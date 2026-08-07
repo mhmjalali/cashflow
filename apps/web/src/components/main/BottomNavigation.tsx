@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { motion } from "motion/react";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { motion } from 'motion/react';
 import {
   Home,
   PiggyBank,
@@ -10,7 +10,7 @@ import {
   UserRound,
   Plus,
   type LucideIcon,
-} from "lucide-react";
+} from 'lucide-react';
 
 type NavItem = {
   href: string;
@@ -19,13 +19,13 @@ type NavItem = {
 };
 
 const rightItems: NavItem[] = [
-  { href: "/dashboard", label: "خانه", icon: Home },
-  { href: "/dashboard/budget", label: "بودجه", icon: PiggyBank },
+  { href: '/dashboard', label: 'خانه', icon: Home },
+  { href: '/dashboard/budget', label: 'بودجه', icon: PiggyBank },
 ];
 
 const leftItems: NavItem[] = [
-  { href: "/dashboard/transactions", label: "تراکنش", icon: ArrowLeftRight },
-  { href: "/dashboard/account", label: "کاربر", icon: UserRound },
+  { href: '/dashboard/transactions', label: 'تراکنش', icon: ArrowLeftRight },
+  { href: '/dashboard/account', label: 'کاربر', icon: UserRound },
 ];
 
 function NavLink({ item, isActive }: { item: NavItem; isActive: boolean }) {
@@ -40,24 +40,24 @@ function NavLink({ item, isActive }: { item: NavItem; isActive: boolean }) {
         <motion.span
           layoutId="nav-active-pill"
           className="absolute inset-x-2 top-0.5 h-[90%] rounded-2xl bg-secondary/10"
-          transition={{ type: "spring", stiffness: 380, damping: 30 }}
+          transition={{ type: 'spring', stiffness: 380, damping: 30 }}
         />
       )}
       <motion.span
         animate={{ y: isActive ? -1 : 0, scale: isActive ? 1.08 : 1 }}
-        transition={{ type: "spring", stiffness: 380, damping: 20 }}
+        transition={{ type: 'spring', stiffness: 380, damping: 20 }}
         className="relative z-10"
       >
         <Icon
           className={`h-5.5 w-5.5 transition-colors duration-200 ${
-            isActive ? "text-secondary" : "text-text-muted"
+            isActive ? 'text-secondary' : 'text-text-muted'
           }`}
           strokeWidth={isActive ? 2.4 : 2}
         />
       </motion.span>
       <span
         className={`relative z-10 text-[11px] transition-colors duration-200 ${
-          isActive ? "font-medium text-secondary" : "text-text-muted"
+          isActive ? 'font-medium text-secondary' : 'text-text-muted'
         }`}
       >
         {item.label}
@@ -74,7 +74,7 @@ export default function BottomNavigation({
   const pathname = usePathname();
 
   const isActive = (href: string) =>
-    href === "/dashboard" ? pathname === href : pathname.startsWith(href);
+    href === '/dashboard' ? pathname === href : pathname.startsWith(href);
 
   return (
     <div
@@ -93,7 +93,7 @@ export default function BottomNavigation({
             aria-label="عملیات سریع"
             whileTap={{ scale: 0.9 }}
             whileHover={{ scale: 1.06 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
             className="relative -mt-7 flex h-13 w-13 items-center justify-center rounded-full bg-secondary shadow-[0_10px_20px_-6px_rgba(217,119,6,0.55)]"
           >
             <motion.span
@@ -102,7 +102,7 @@ export default function BottomNavigation({
               transition={{
                 duration: 2.6,
                 repeat: Infinity,
-                ease: "easeInOut",
+                ease: 'easeInOut',
               }}
             />
             <Plus

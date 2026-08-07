@@ -1,9 +1,9 @@
-import Drawer from "@/components/ui/Deawer";
-import Tabs from "@/components/ui/TabPanel";
-import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
-import PaidContent from "./paid-content";
-import ReceivedContent from "./received-content";
+import Drawer from '@/components/ui/Deawer';
+import Tabs from '@/components/ui/TabPanel';
+import { AnimatePresence, motion } from 'motion/react';
+import { useState } from 'react';
+import PaidContent from './paid-content';
+import ReceivedContent from './received-content';
 
 type PaidReceivedContentProps = {
   open: boolean;
@@ -11,7 +11,7 @@ type PaidReceivedContentProps = {
 };
 
 const PaidReceivedContent = ({ open, setOpen }: PaidReceivedContentProps) => {
-  const [activeTab, setActiveTab] = useState("expense");
+  const [activeTab, setActiveTab] = useState('expense');
 
   return (
     <Drawer open={open} onClose={() => setOpen(false)} side="bottom">
@@ -20,19 +20,19 @@ const PaidReceivedContent = ({ open, setOpen }: PaidReceivedContentProps) => {
           value={activeTab}
           onChange={setActiveTab}
           items={[
-            { value: "expense", label: "خرج" },
-            { value: "income", label: "دریافتی" },
+            { value: 'expense', label: 'خرج' },
+            { value: 'income', label: 'دریافتی' },
           ]}
         />
         <div className="relative overflow-hidden">
           <AnimatePresence mode="wait">
-            {activeTab === "expense" ? (
+            {activeTab === 'expense' ? (
               <motion.div
                 key="expense"
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.15, ease: "easeInOut" }}
+                transition={{ duration: 0.15, ease: 'easeInOut' }}
               >
                 <PaidContent />
               </motion.div>
@@ -42,7 +42,7 @@ const PaidReceivedContent = ({ open, setOpen }: PaidReceivedContentProps) => {
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.15, ease: "easeInOut" }}
+                transition={{ duration: 0.15, ease: 'easeInOut' }}
               >
                 <ReceivedContent />
               </motion.div>

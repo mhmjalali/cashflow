@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import PaidReceivedContent from "@/components/shared/paid-received-content";
-import { BanknoteArrowUp } from "lucide-react";
-import { useState } from "react";
+import PaidReceivedContent from '@/components/shared/paid-received-content';
+import { BanknoteArrowUp } from 'lucide-react';
+import { useState } from 'react';
 
 const Paid = () => {
   const [modalOpen, setModalOpen] = useState(false);

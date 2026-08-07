@@ -1,4 +1,4 @@
-import { Landmark } from "lucide-react";
+import { Landmark } from 'lucide-react';
 
 const Saving = () => {
   return (

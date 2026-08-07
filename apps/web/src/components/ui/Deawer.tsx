@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { AnimatePresence, motion, type Variants } from "motion/react";
-import { X } from "lucide-react";
-import Button from "./Button";
+import { AnimatePresence, motion, type Variants } from 'motion/react';
+import { X } from 'lucide-react';
+import Button from './Button';
 
-export type DrawerSide = "left" | "right" | "bottom" | "top";
+export type DrawerSide = 'left' | 'right' | 'bottom' | 'top';
 
 interface DrawerProps {
   open: boolean;
@@ -15,31 +15,31 @@ interface DrawerProps {
 }
 
 const variants: Record<DrawerSide, Variants> = {
-  right: { hidden: { x: "100%" }, visible: { x: 0 } },
-  left: { hidden: { x: "-100%" }, visible: { x: 0 } },
-  bottom: { hidden: { y: "100%" }, visible: { y: 0 } },
-  top: { hidden: { y: "-100%" }, visible: { y: 0 } },
+  right: { hidden: { x: '100%' }, visible: { x: 0 } },
+  left: { hidden: { x: '-100%' }, visible: { x: 0 } },
+  bottom: { hidden: { y: '100%' }, visible: { y: 0 } },
+  top: { hidden: { y: '-100%' }, visible: { y: 0 } },
 };
 
 const position: Record<DrawerSide, string> = {
-  right: "right-0 top-0 h-full",
-  left: "left-0 top-0 h-full",
-  bottom: "bottom-0 left-0 w-full",
-  top: "top-0 left-0 w-full",
+  right: 'right-0 top-0 h-full',
+  left: 'left-0 top-0 h-full',
+  bottom: 'bottom-0 left-0 w-full',
+  top: 'top-0 left-0 w-full',
 };
 
 const defaultSize: Record<DrawerSide, string> = {
-  right: "w-full sm:max-w-xs",
-  left: "w-full sm:max-w-xs",
-  bottom: "min-h-[50vh]",
-  top: "min-h-[50vh]",
+  right: 'w-full sm:max-w-xs',
+  left: 'w-full sm:max-w-xs',
+  bottom: 'min-h-[50vh]',
+  top: 'min-h-[50vh]',
 };
 
 export default function Drawer({
   open,
   onClose,
   children,
-  side = "right",
+  side = 'right',
   size,
 }: DrawerProps) {
   const resolvedSize = size ?? defaultSize[side];
@@ -61,16 +61,16 @@ export default function Drawer({
           <motion.div
             key="panel"
             className={[
-              "fixed z-90 flex flex-col bg-white shadow-2xl",
+              'fixed z-90 flex flex-col bg-white shadow-2xl',
               position[side],
               resolvedSize,
-            ].join(" ")}
+            ].join(' ')}
             variants={variants[side]}
             initial="hidden"
             animate="visible"
             exit="hidden"
             transition={{
-              type: "spring",
+              type: 'spring',
               stiffness: 320,
               damping: 32,
               mass: 0.9,

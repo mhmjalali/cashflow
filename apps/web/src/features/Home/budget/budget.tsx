@@ -1,4 +1,4 @@
-import BudgetList from "./budget-list";
+import BudgetList from './budget-list';
 
 const Budget = () => {
   return (

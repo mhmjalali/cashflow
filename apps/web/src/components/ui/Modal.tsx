@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { AnimatePresence, motion } from "motion/react";
-import { X } from "lucide-react";
-import Button from "./Button";
+import { AnimatePresence, motion } from 'motion/react';
+import { X } from 'lucide-react';
+import Button from './Button';
 
 const Modal = ({
   children,
   open,
   onClose,
   closeOnBackdrop = false,
-  className = "",
+  className = '',
 }: {
   children: React.ReactNode;
   open: boolean;
@@ -32,10 +32,10 @@ const Modal = ({
           />
           <motion.div
             key="panel"
-            initial={{ opacity: 0, scale: 0.95, y: "-48%", x: "50%" }}
-            animate={{ opacity: 1, scale: 1, y: "-50%", x: "50%" }}
-            exit={{ opacity: 0, scale: 0.95, y: "-48%", x: "50%" }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
+            initial={{ opacity: 0, scale: 0.95, y: '-48%', x: '50%' }}
+            animate={{ opacity: 1, scale: 1, y: '-50%', x: '50%' }}
+            exit={{ opacity: 0, scale: 0.95, y: '-48%', x: '50%' }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
             className={`z-100 fixed top-[50%] right-[50%] bg-white p-2 rounded-md ${className}`}
           >
             <Button

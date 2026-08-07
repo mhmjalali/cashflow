@@ -1,21 +1,21 @@
-"use client";
+'use client';
 
-import { useForm, Controller } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import InputField from "@/components/ui/InputField";
-import SelectField from "@/components/ui/SelectField";
-import Button from "@/components/ui/Button";
-import { budgetCategories } from "@/features/Home/budget/budget-config";
+import { useForm, Controller } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import InputField from '@/components/ui/InputField';
+import SelectField from '@/components/ui/SelectField';
+import Button from '@/components/ui/Button';
+import { budgetCategories } from '@/features/Home/budget/budget-config';
 
 const paidSchema = z.object({
   amount: z
-    .number({ error: "مبلغ را وارد کنید" })
-    .positive("مبلغ باید بزرگتر از صفر باشد"),
+    .number({ error: 'مبلغ را وارد کنید' })
+    .positive('مبلغ باید بزرگتر از صفر باشد'),
   budget_type: z
-    .string({ error: "دسته بندی را انتخاب کنید" })
-    .min(1, "دسته بندی را انتخاب کنید"),
-  date: z.string({ error: "تاریخ را وارد کنید" }).min(1, "تاریخ را وارد کنید"),
+    .string({ error: 'دسته بندی را انتخاب کنید' })
+    .min(1, 'دسته بندی را انتخاب کنید'),
+  date: z.string({ error: 'تاریخ را وارد کنید' }).min(1, 'تاریخ را وارد کنید'),
 });
 
 type PaidFormValues = z.infer<typeof paidSchema>;
@@ -53,7 +53,7 @@ const PaidContent = () => {
         type="number"
         placeholder="مبلغ را وارد کنید"
         error={errors.amount?.message}
-        {...register("amount", { valueAsNumber: true })}
+        {...register('amount', { valueAsNumber: true })}
       />
 
       <Controller
@@ -77,7 +77,7 @@ const PaidContent = () => {
         label="تاریخ"
         type="datetime-local"
         error={errors.date?.message}
-        {...register("date")}
+        {...register('date')}
       />
 
       <Button

@@ -1,4 +1,4 @@
-import { BanknoteArrowDown } from "lucide-react";
+import { BanknoteArrowDown } from 'lucide-react';
 
 const Received = () => {
   return (

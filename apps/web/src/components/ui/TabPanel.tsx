@@ -1,22 +1,22 @@
-"use client";
+'use client';
 
-import { cn } from "@/lib/utils";
-import { cva, type VariantProps } from "class-variance-authority";
-import { motion } from "motion/react";
-import { useId } from "react";
+import { cn } from '@/lib/utils';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { motion } from 'motion/react';
+import { useId } from 'react';
 
 const tabsVariants = cva(
-  "relative flex items-center rounded-xl bg-muted/50 p-0.5 border border-border/60 backdrop-blur-sm",
+  'relative flex items-center rounded-xl bg-muted/50 p-0.5 border border-border/60 backdrop-blur-sm',
   {
     variants: {
       size: {
-        sm: "h-9",
-        md: "h-11",
-        lg: "h-13",
+        sm: 'h-9',
+        md: 'h-11',
+        lg: 'h-13',
       },
     },
     defaultVariants: {
-      size: "md",
+      size: 'md',
     },
   },
 );
@@ -71,8 +71,8 @@ const Tabs = ({ items, value, onChange, size, className }: TabsProps) => {
             className={cn(
               tabButtonVariants(),
               isActive
-                ? "text-primary-foreground"
-                : "text-muted-foreground hover:text-foreground",
+                ? 'text-primary-foreground'
+                : 'text-muted-foreground hover:text-foreground',
             )}
           >
             {isActive && (
@@ -80,7 +80,7 @@ const Tabs = ({ items, value, onChange, size, className }: TabsProps) => {
                 layoutId={`active-pill-${layoutId}`}
                 className="absolute inset-0 z-0 rounded-lg bg-primary/50 shadow-sm"
                 transition={{
-                  type: "spring",
+                  type: 'spring',
                   stiffness: 400,
                   damping: 30,
                 }}

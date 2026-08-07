@@ -1,6 +1,6 @@
-import Budget from "./budget/budget";
-import FinanceActions from "./finance-actions";
-import FinantialSnapShot from "./finantial-snap-shot";
+import Budget from './budget/budget';
+import FinanceActions from './finance-actions';
+import FinantialSnapShot from './finantial-snap-shot';
 
 const Home = () => {
   return (

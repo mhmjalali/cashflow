@@ -8,26 +8,26 @@ import {
   Home,
   CreditCard,
   MoreHorizontal,
-} from "lucide-react";
+} from 'lucide-react';
 
 export const budgetCategories = [
-  { key: "transport", label: "حمل و نقل", icon: Car, color: "#1d4ed8" },
-  { key: "food", label: "خوراک", icon: Utensils, color: "#f59e0b" },
-  { key: "clothing", label: "پوشاک", icon: Shirt, color: "#7c3aed" },
+  { key: 'transport', label: 'حمل و نقل', icon: Car, color: '#1d4ed8' },
+  { key: 'food', label: 'خوراک', icon: Utensils, color: '#f59e0b' },
+  { key: 'clothing', label: 'پوشاک', icon: Shirt, color: '#7c3aed' },
   {
-    key: "health",
-    label: "بهداشت و درمان",
+    key: 'health',
+    label: 'بهداشت و درمان',
     icon: HeartPulse,
-    color: "#dc2626",
+    color: '#dc2626',
   },
-  { key: "debt", label: "قرض", icon: Landmark, color: "#0891b2" },
-  { key: "fun", label: "تفریح", icon: Gamepad2, color: "#db2777" },
-  { key: "home", label: "خانه", icon: Home, color: "#334155" },
-  { key: "installment", label: "قسط", icon: CreditCard, color: "#b45309" },
-  { key: "other", label: "سایر", icon: MoreHorizontal, color: "#64748b" },
+  { key: 'debt', label: 'قرض', icon: Landmark, color: '#0891b2' },
+  { key: 'fun', label: 'تفریح', icon: Gamepad2, color: '#db2777' },
+  { key: 'home', label: 'خانه', icon: Home, color: '#334155' },
+  { key: 'installment', label: 'قسط', icon: CreditCard, color: '#b45309' },
+  { key: 'other', label: 'سایر', icon: MoreHorizontal, color: '#64748b' },
 ] as const;
 
-export type BudgetCategoryKey = (typeof budgetCategories)[number]["key"];
+export type BudgetCategoryKey = (typeof budgetCategories)[number]['key'];
 
 export const fakeBudgetData: Record<
   BudgetCategoryKey,
